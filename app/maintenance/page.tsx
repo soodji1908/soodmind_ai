@@ -1,0 +1,3 @@
+import Link from 'next/link';
+import { Wrench } from 'lucide-react';
+export default function MaintenancePage(){return <main className="flex min-h-screen items-center justify-center bg-slate-950 px-6 text-white"><section className="max-w-lg text-center"><div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-cyan-400/15 text-cyan-300"><Wrench className="h-8 w-8"/></div><h1 className="mt-6 text-3xl font-semibold">We’ll be back shortly</h1><p className="mt-3 text-sm leading-6 text-slate-300">EstateMind is temporarily undergoing scheduled maintenance. Please check back soon.</p><Link href="/admin/login" className="mt-6 inline-block text-sm font-medium text-cyan-300 underline">Platform administrator</Link></section></main>}

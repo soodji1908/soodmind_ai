@@ -1,0 +1,81 @@
+import re
+
+SKILL_TAXONOMY: dict[str, tuple[str, ...]] = {
+    "Python": ("python",),
+    "JavaScript": ("javascript",),
+    "TypeScript": ("typescript",),
+    "Java": ("java",),
+    "C++": ("c++",),
+    "C#": ("c#",),
+    "Go": ("golang",),
+    "Rust": ("rust",),
+    "SQL": ("sql",),
+    "PostgreSQL": ("postgresql", "postgres"),
+    "MySQL": ("mysql",),
+    "MongoDB": ("mongodb",),
+    "Redis": ("redis",),
+    "React": ("react", "reactjs", "react.js"),
+    "Next.js": ("next.js", "nextjs"),
+    "Node.js": ("node.js", "nodejs"),
+    "Vue.js": ("vue.js", "vuejs", "vue"),
+    "Angular": ("angular",),
+    "HTML": ("html", "html5"),
+    "CSS": ("css", "css3"),
+    "Tailwind CSS": ("tailwind", "tailwind css"),
+    "Django": ("django",),
+    "Flask": ("flask",),
+    "FastAPI": ("fastapi",),
+    "Spring Boot": ("spring boot",),
+    "Docker": ("docker",),
+    "Kubernetes": ("kubernetes", "k8s"),
+    "AWS": ("aws", "amazon web services"),
+    "Azure": ("azure",),
+    "Google Cloud": ("google cloud", "gcp"),
+    "Terraform": ("terraform",),
+    "Git": ("git", "github", "gitlab"),
+    "CI/CD": ("ci/cd", "continuous integration"),
+    "Linux": ("linux",),
+    "REST APIs": ("rest api", "rest apis", "restful"),
+    "GraphQL": ("graphql",),
+    "Machine Learning": ("machine learning",),
+    "Deep Learning": ("deep learning",),
+    "NLP": ("natural language processing", "nlp"),
+    "Computer Vision": ("computer vision",),
+    "scikit-learn": ("scikit-learn", "sklearn"),
+    "TensorFlow": ("tensorflow",),
+    "PyTorch": ("pytorch",),
+    "pandas": ("pandas",),
+    "NumPy": ("numpy",),
+    "Data Analysis": ("data analysis", "data analytics"),
+    "Power BI": ("power bi",),
+    "Tableau": ("tableau",),
+    "Excel": ("excel",),
+    "Statistics": ("statistics", "statistical analysis"),
+    "Project Management": ("project management",),
+    "Agile": ("agile", "scrum"),
+    "Communication": ("communication skills",),
+    "Leadership": ("leadership",),
+    "Teamwork": ("teamwork", "team player"),
+    "Problem Solving": ("problem solving", "problem-solving"),
+    "Customer Service": ("customer service",),
+    "Sales": ("sales",),
+    "Digital Marketing": ("digital marketing",),
+    "SEO": ("seo",),
+    "Figma": ("figma",),
+    "Accounting": ("accounting",),
+    "Financial Modeling": ("financial modeling", "financial modelling"),
+    "Salesforce": ("salesforce", "crm"),
+    "Property Valuation": ("property valuation", "valuation"),
+    "Market Analysis": ("market analysis",),
+}
+
+_ALIAS_PATTERNS = tuple(
+    (canonical, re.compile(rf"(?<![A-Za-z0-9+#]){re.escape(alias)}(?![A-Za-z0-9+#])", re.IGNORECASE))
+    for canonical, aliases in SKILL_TAXONOMY.items()
+    for alias in aliases
+)
+
+
+def extract_skills(text: str) -> list[str]:
+    found = {canonical for canonical, pattern in _ALIAS_PATTERNS if pattern.search(text)}
+    return sorted(found)

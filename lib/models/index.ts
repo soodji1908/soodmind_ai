@@ -1,0 +1,53 @@
+export { User } from './User';
+export { UserRole } from './UserRole';
+export { PortalMembership, PORTAL_ROLES, type PortalKey } from './PortalMembership';
+export { Session } from './Session';
+export { LoginActivity } from './LoginActivity';
+export { Notification } from './Notification';
+export { AuditLog } from './AuditLog';
+export { PlatformSettings } from './PlatformSettings';
+
+export { Property } from './Property';
+export { PropertyImage } from './PropertyImage';
+export { PropertyDocument } from './PropertyDocument';
+export { PropertyValuation } from './PropertyValuation';
+export { PropertyPrediction } from './PropertyPrediction';
+export { PropertyEnquiry } from './PropertyEnquiry';
+export { PropertyFavorite } from './PropertyFavorite';
+export { PropertyComparison } from './PropertyComparison';
+export { PropertyMarketData } from './PropertyMarketData';
+export { RentalRecord } from './RentalRecord';
+export { Tenant } from './Tenant';
+export { MaintenanceRequest } from './MaintenanceRequest';
+export { Appointment } from './Appointment';
+export { Lead } from './Lead';
+export { AgentCommission } from './AgentCommission';
+
+export { Resume } from './Resume';
+export { ResumeAnalysis } from './ResumeAnalysis';
+export { ResumeSkill } from './ResumeSkill';
+export { ResumeTemplate } from './ResumeTemplate';
+export { JobDescription } from './JobDescription';
+export { JobMatch } from './JobMatch';
+export { CandidateRanking } from './CandidateRanking';
+export { CareerRecommendation } from './CareerRecommendation';
+export { SkillGapAnalysis } from './SkillGapAnalysis';
+export { JobApplication } from './JobApplication';
+export { InterviewSession } from './InterviewSession';
+export { Recruiter } from './Recruiter';
+export { JobVacancy } from './JobVacancy';
+
+export { Organization } from './Organization';
+export { OrganizationMember } from './OrganizationMember';
+export { Subscription } from './Subscription';
+export { Payment } from './Payment';
+export { Invoice } from './Invoice';
+export { SupportTicket } from './SupportTicket';
+export { EmailLog } from './EmailLog';
+export { UsageRecord } from './UsageRecord';
+
+export { MlModel } from './MlModel';
+export { MlModelVersion } from './MlModelVersion';
+export { MlTrainingRun } from './MlTrainingRun';
+export { MlDataset } from './MlDataset';
+export { MlPredictionLog } from './MlPredictionLog';

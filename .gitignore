@@ -1,0 +1,12 @@
+﻿node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.next/
+.env
+.env.*
+!.env.example
+dist/
+build/
+*.log
