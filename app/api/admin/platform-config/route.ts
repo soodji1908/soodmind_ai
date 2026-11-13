@@ -43,7 +43,7 @@ export async function GET() {
   try {
     const auth = await adminContext();
     if ('response' in auth) return auth.response;
-    const rows = await PlatformSettings.find({ key: { $in: [...ALLOWED] } }).lean();
+    const rows = await PlatformSettings.find({ key: { $in: Array.from(ALLOWED) } }).lean();
     const settings: Record<string, unknown> = { ...DEFAULTS };
     for (const row of rows) settings[row.key] = row.value;
     return NextResponse.json({ ok: true, settings });
